@@ -40,41 +40,54 @@ class opeartion:
 # constructor for main()
 if __name__ == '__main__':
 
-    # creating a object
 
-    # creating a infinite loop
-    while True:
+    # loop for doing until true
+    while (True):
 
-    #for choice
-        if choice in ['1', '2', '3', '4']:
-        
-        # get number from user
-        # also using the expection and error handling
+        # user menu
+        opeartion.menu()
+
+        # get user choice
+        choice = int(input("Enter choice (1/2/3/4/5): "))
+
+        # now condition
+        if choice in [1, 2, 3, 4]:
+
+            # try for input the value from user
             try:
-                num1 = float(input("Enter first number: "))
-                num2 = float(input("Enter the second number: "))
-
+                num1= float(input("Enter the first number: "))
+                num2= float(input("Enter the second number: "))
             except ValueError:
                 print("Invalid input. Please enter numeric values.")
                 continue
-        opeartor = opeartion(num1, num2)
-        opeartor.menu()
 
-        # perform opeartion based on user choice
-            if choice == '1':
-                print(f"The result is:{opeartor.add(num1, num2)}")
-            elif choice == '2':
-                print(f"The result is:{opeartor.sub(num1, num2)}")
-            elif choice == '3':
-                print(f"The result is: {opeartor.mul(num1, num2)}")  
-            elif choice == '4':
-                print(f"The result is: {opeartor.div(num1, num2)}")  
+            # now creating object
+            operator  = opeartion()
 
-            elif choice == '5':
-                print("Exiting the program.")
-                break
+            # condition for operation
+            if choice == 1:
+                print(f"The output is {operator.add(num1, num2)}")
+            elif choice == 2:
+                print(f"The output is {operator.sub(num1, num2)}")
+            elif choice == 3:
+                print(f"The output is {operator.mul(num1, num2)}")
             else:
-            print("Invalid choice. Please select a valid operation.")
+                print(f"The output is {operator.div(num1, num2)}")
+
+            
+        elif choice == 5:
+            print("The Operation is ended")
+            break
+        else:
+            print("Please enter the correct value!!")
+
+
+        
+
+
+
+
+
 
 
 

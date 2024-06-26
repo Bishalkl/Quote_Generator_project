@@ -45,7 +45,7 @@ if __name__ == '__main__':
     while (True):
 
         # user menu
-        opeartion.menu()
+        opeartion.menu(self=None)
 
         # get user choice
         choice = int(input("Enter choice (1/2/3/4/5): "))
@@ -62,17 +62,17 @@ if __name__ == '__main__':
                 continue
 
             # now creating object
-            operator  = opeartion()
+            operator  = opeartion(num1, num2)
 
             # condition for operation
             if choice == 1:
-                print(f"The output is {operator.add(num1, num2)}")
+                print(f"The output is {operator.add()}")
             elif choice == 2:
-                print(f"The output is {operator.sub(num1, num2)}")
+                print(f"The output is {operator.sub()}")
             elif choice == 3:
-                print(f"The output is {operator.mul(num1, num2)}")
+                print(f"The output is {operator.mul()}")
             else:
-                print(f"The output is {operator.div(num1, num2)}")
+                print(f"The output is {operator.div()}")
 
             
         elif choice == 5:
